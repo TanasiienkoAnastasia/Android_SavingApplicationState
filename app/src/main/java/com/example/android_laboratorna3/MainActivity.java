@@ -10,16 +10,15 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    User user = new User("undefined", 0);
     String name ="undefined";
     final static String nameVariableKey = "NAME_VARIABLE";
-    TextView nameView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        nameView = findViewById(R.id.nameView);
     }
 
 
