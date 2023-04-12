@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         catch (NumberFormatException ex){}
         user = new User(name, age);
     }
-    public void getName(View view) {
+    public void getData(View view) {
         // получаем сохраненные данные
         TextView dataView = findViewById(R.id.dataView);
         dataView.setText("Name: " + user.getName() + " Age: " + user.getAge());
