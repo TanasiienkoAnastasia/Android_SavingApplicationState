@@ -11,6 +11,8 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     String name ="undefined";
+    final static String nameVariableKey = "NAME_VARIABLE";
+    TextView nameView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
