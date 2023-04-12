@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     User user = new User("undefined", 0);
     String name ="undefined";
-    final static String nameVariableKey = "NAME_VARIABLE";
+    final static String userVariableKey = "NAME_VARIABLE";
 
 
     @Override
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
 
-        outState.putString(nameVariableKey, name);
+        outState.putSerializable(userVariableKey, user);
         super.onSaveInstanceState(outState);
     }
 
@@ -34,8 +34,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
 
-        name = savedInstanceState.getString(nameVariableKey);
-        nameView.setText(name);
+        // получаем объект User в переменную
+        user = (User)savedInstanceState.getSerializable(userVariableKey);
+        TextView dataView = findViewById(R.id.dataView);
+        dataView.setText("Name: " + user.getName() + " Age: " + user.getAge());
     }
 
     public void saveName(View view) {
