@@ -40,11 +40,17 @@ public class MainActivity extends AppCompatActivity {
         dataView.setText("Name: " + user.getName() + " Age: " + user.getAge());
     }
 
-    public void saveName(View view) {
-
-        // получаем введенное имя
+    public void saveData(View view) {
+        // получаем введенные данные
         EditText nameBox = findViewById(R.id.nameBox);
-        name = nameBox.getText().toString();
+        EditText yearBox = findViewById(R.id.yearBox);
+        String name = nameBox.getText().toString();
+        int age = 0;  // значение по умолчанию, если пользователь ввел некорректные данные
+        try{
+            age = Integer.parseInt(yearBox.getText().toString());
+        }
+        catch (NumberFormatException ex){}
+        user = new User(name, age);
     }
     public void getName(View view) {
 
