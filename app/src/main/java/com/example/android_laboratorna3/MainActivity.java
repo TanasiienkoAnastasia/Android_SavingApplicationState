@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
     public void getName(View view) {
 
         // получаем сохраненное имя
-        TextView nameView = findViewById(R.id.nameView);
         nameView.setText(name);
     }
 }
