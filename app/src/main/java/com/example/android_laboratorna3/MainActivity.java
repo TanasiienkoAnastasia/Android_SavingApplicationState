@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
         user = new User(name, age);
     }
     public void getName(View view) {
-
-        // получаем сохраненное имя
-        nameView.setText(name);
+        // получаем сохраненные данные
+        TextView dataView = findViewById(R.id.dataView);
+        dataView.setText("Name: " + user.getName() + " Age: " + user.getAge());
     }
 }
