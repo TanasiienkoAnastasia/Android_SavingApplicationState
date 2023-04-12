@@ -22,6 +22,23 @@ public class MainActivity extends AppCompatActivity {
         nameView = findViewById(R.id.nameView);
     }
 
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+
+        outState.putString(nameVariableKey, name);
+        super.onSaveInstanceState(outState);
+    }
+
+    // получение ранее сохраненного состояния
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        name = savedInstanceState.getString(nameVariableKey);
+        nameView.setText(name);
+    }
+
     public void saveName(View view) {
 
         // получаем введенное имя
